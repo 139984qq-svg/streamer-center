@@ -1,0 +1,30 @@
+.parallax {
+  overflow: hidden;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.scroller {
+  font-weight: 600;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.scroller span {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+/* Dashboard marquee style */
+.scroll-text-item {
+  color: #6750A4;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
