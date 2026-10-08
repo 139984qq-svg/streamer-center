@@ -1,4 +1,4 @@
-name = "lygstreamer-center"
+name = "vtuber"
 compatibility_date = "2025-01-01"
 
 # 纯静态站点：直接托管仓库根目录作为静态资源，无需 Worker 脚本与构建
