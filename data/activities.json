@@ -1,0 +1,77 @@
+{
+  "updatedAt": "2026-10-08T08:26:54+08:00",
+  "source": "B站官方活动列表接口(api.bilibili.com/x/activity/page/list,每日自动抓取,VTuber 相关)",
+  "count": 10,
+  "activities": [
+    {
+      "title": "虚拟人成材计划  8.21晚20：00全网独播",
+      "url": "https://www.bilibili.com/blackboard/topic/activity-Lg7OFigTQ.html",
+      "status": "进行中",
+      "stime": "2020-08-14",
+      "etime": "1970-01-01"
+    },
+    {
+      "title": "B站首档虚拟“二人转”小剧场《Hello~虚拟酱》",
+      "url": "https://www.bilibili.com/blackboard/topic/activity-qNuN6LnM.html",
+      "status": "进行中",
+      "stime": "2019-11-07",
+      "etime": "1970-01-01"
+    },
+    {
+      "title": "2026虚拟歌手创作赛",
+      "url": "https://www.bilibili.com/blackboard/era/2026VirtualSinger-pc.html",
+      "status": "进行中",
+      "stime": "2026-07-09",
+      "etime": "2026-10-31"
+    },
+    {
+      "title": "525夏日企划《我要我就这样》",
+      "url": "https://www.bilibili.com/blackboard/era/youngh5youngweb.html",
+      "status": "已结束",
+      "stime": "2025-05-21",
+      "etime": "2025-09-15"
+    },
+    {
+      "title": "UP！小剧场6.0",
+      "url": "https://www.bilibili.com/blackboard/era/ezM2XaZOS6uDnk5i.html",
+      "status": "已结束",
+      "stime": "2025-10-17",
+      "etime": "2025-12-04"
+    },
+    {
+      "title": "UP！小剧场 年终大赏",
+      "url": "https://www.bilibili.com/blackboard/era/fPMcKH3bg5KEdqyZ.html",
+      "status": "已结束",
+      "stime": "2025-12-05",
+      "etime": "2026-01-22"
+    },
+    {
+      "title": "UP！小剧场—新年，FUN马过来吧！",
+      "url": "https://www.bilibili.com/blackboard/era/Z1lWEtxGAqLq7xwQ.html",
+      "status": "已结束",
+      "stime": "2026-01-23",
+      "etime": "2026-03-10"
+    },
+    {
+      "title": "UP！小剧场 奇思妙想演究所",
+      "url": "https://www.bilibili.com/blackboard/era/As1HsfTiX4IX2PlY.html",
+      "status": "已结束",
+      "stime": "2026-03-11",
+      "etime": "2026-04-26"
+    },
+    {
+      "title": "2026UP！小剧场 2.0",
+      "url": "https://www.bilibili.com/blackboard/era/nrkvpWvEhNtwKqyT.html",
+      "status": "已结束",
+      "stime": "2026-04-27",
+      "etime": "2026-06-14"
+    },
+    {
+      "title": "2026“次元奇旅”暑期狂欢节",
+      "url": "https://live.bilibili.com/blackboard/era/5QLqxye7tDmgI73D.html",
+      "status": "已结束",
+      "stime": "2026-07-10",
+      "etime": "2026-09-30"
+    }
+  ]
+}

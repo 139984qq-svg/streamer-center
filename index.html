@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VTuber 虚拟直播运营 · AI 工作台</title>
+  <meta name="description" content="AI agent 驱动的虚拟直播品类运营工作台:数据日报 / 主播中心 / 内容企划 / 全网资讯 / 社群分析 / 直播复盘">
+  <link rel="stylesheet" href="assets/css/main.css?v=13">
+</head>
+<body>
+  <!-- 移动端抽屉遮罩 -->
+  <div class="sidebar-mask" id="sidebarMask"></div>
+
+  <div class="app">
+    <!-- ===== 侧边导航 ===== -->
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+      <div class="sidebar-head">
+        <div class="brand-mark">V</div>
+        <div class="brand-text">
+          <b>VTuber 运营工作台</b>
+          <span>AI Agent 驱动</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav" id="sidebarNav"></nav>
+    </aside>
+
+    <!-- ===== 主内容区 ===== -->
+    <div class="main">
+      <header class="header">
+        <button class="icon-btn" id="menuToggle" aria-label="切换导航" title="导航">☰</button>
+        <nav class="breadcrumb" id="breadcrumb" aria-label="面包屑"></nav>
+        <div class="header-spacer"></div>
+        <span class="ai-note" id="todayNote" title="AI 分析状态">AI</span>
+        <button class="icon-btn" id="themeToggle" aria-label="切换深色模式" title="深色模式">◐</button>
+        <button class="icon-btn" id="collapseToggle" aria-label="收起侧栏" title="收起侧栏">‹</button>
+      </header>
+
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <!-- 消息提示容器 -->
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <script src="assets/js/store.js?v=12"></script>
+  <script src="assets/js/app.js?v=12"></script>
+  <script src="assets/js/pages/overview.js?v=12"></script>
+  <script src="assets/js/pages/anchors.js?v=10"></script>
+  <script src="assets/js/pages/analysis.js?v=10"></script>
+  <script src="assets/js/pages/planning.js?v=15"></script>
+  <script src="assets/js/pages/monitor.js?v=10"></script>
+  <script src="assets/js/pages/news.js?v=15"></script>
+  <script src="assets/js/pages/community.js?v=10"></script>
+  <script src="assets/js/pages/review.js?v=14"></script>
+  <script src="assets/js/pages/daily.js?v=13"></script>
+</body>
+</html>

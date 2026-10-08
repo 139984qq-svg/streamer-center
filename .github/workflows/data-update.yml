@@ -1,0 +1,80 @@
+name: 每日数据更新
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"   # 每30分钟:直播状态刷新(北京 15:07~次日14:37)
+    - cron: "0 16 * * *"     # 北京 0:00:全网资讯+粉丝社群+活动链接
+    - cron: "5 14 * * *"     # 北京 22:05:全量主播+企划+复盘+日报
+  workflow_dispatch:         # 手动触发(全部执行)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
+jobs:
+  # ── 每30分钟:直播状态 ─────────────────────────────
+  live:
+    if: github.event_name == 'schedule' && github.event.schedule == '7,37 * * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 刷新直播状态
+        run: python3 scripts/refresh_live_status.py || echo "刷新部分失败，继续提交"
+      - name: 提交数据变更
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/anchors.json
+          git diff --cached --quiet || git commit -m "chore: 直播状态刷新 [skip ci]"
+          git push origin HEAD
+
+  # ── 北京 0:00:资讯+社群+活动 ───────────────────────
+  news:
+    if: github.event_name == 'schedule' && github.event.schedule == '0 16 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 抓取最新活动链接
+        run: python3 scripts/fetch_activities.py || echo "活动抓取失败，沿用现有库"
+      - name: 生成资讯+社群
+        run: python3 scripts/gen_content.py --only news,community || echo "内容生成失败，沿用现有数据"
+      - name: 提交数据变更
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/activities.json data/news.json data/community.json
+          git diff --cached --quiet || git commit -m "chore: 每日资讯+社群更新 [skip ci]"
+          git push origin HEAD
+
+  # ── 北京 22:05:全量+企划+复盘+日报 ─────────────────
+  full:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && github.event.schedule == '5 14 * * *')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 全量抓取虚拟区主播+粉丝数
+        run: python3 scripts/fetch_vtubers.py || echo "全量抓取未达标，沿用现有主播库"
+      - name: 生成企划+复盘+日报
+        run: python3 scripts/gen_content.py --only plans,reviews,daily || echo "内容生成失败，沿用现有数据"
+      - name: 提交数据变更
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "chore: 全量数据+日报更新 [skip ci]"
+          git push origin HEAD
