@@ -1,0 +1,38 @@
+name: 部署 Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ["每日数据更新"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 配置 Pages（首次自动启用）
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: 打包站点
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: 发布到 Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
