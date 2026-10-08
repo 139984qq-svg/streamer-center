@@ -32,7 +32,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/anchors.json
-          git diff --cached --quiet || git commit -m "chore: 直播状态刷新 [skip ci]"
+          git diff --cached --quiet || git commit -m "chore: 直播状态刷新"
           git push origin HEAD
 
   # ── 北京 0:00:资讯+社群+活动 ───────────────────────
@@ -54,7 +54,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/activities.json data/news.json data/community.json
-          git diff --cached --quiet || git commit -m "chore: 每日资讯+社群更新 [skip ci]"
+          git diff --cached --quiet || git commit -m "chore: 每日资讯+社群更新"
           git push origin HEAD
 
   # ── 北京 22:05:全量+企划+复盘+日报 ─────────────────
@@ -76,5 +76,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "chore: 全量数据+日报更新 [skip ci]"
+          git diff --cached --quiet || git commit -m "chore: 全量数据+日报更新"
           git push origin HEAD
