@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-20T04:48:08+08:00",
+  "updatedAt": "2026-10-21T03:43:05+08:00",
   "source": "B站官方活动列表接口(api.bilibili.com/x/activity/page/list,每日自动抓取,VTuber 相关)",
-  "count": 10,
+  "count": 9,
   "activities": [
     {
       "title": "虚拟人成材计划  8.21晚20：00全网独播",
@@ -23,13 +23,6 @@
       "status": "进行中",
       "stime": "2026-07-09",
       "etime": "2026-10-31"
-    },
-    {
-      "title": "525夏日企划《我要我就这样》",
-      "url": "https://www.bilibili.com/blackboard/era/youngh5youngweb.html",
-      "status": "已结束",
-      "stime": "2025-05-21",
-      "etime": "2025-09-15"
     },
     {
       "title": "UP！小剧场6.0",
