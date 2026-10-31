@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T04:16:29+08:00",
+  "updatedAt": "2026-11-01T03:38:31+08:00",
   "source": "B站官方活动列表接口(api.bilibili.com/x/activity/page/list,每日自动抓取,VTuber 相关)",
   "count": 9,
   "activities": [
@@ -16,13 +16,6 @@
       "status": "进行中",
       "stime": "2019-11-07",
       "etime": "1970-01-01"
-    },
-    {
-      "title": "2026虚拟歌手创作赛",
-      "url": "https://www.bilibili.com/blackboard/era/2026VirtualSinger-pc.html",
-      "status": "进行中",
-      "stime": "2026-07-09",
-      "etime": "2026-10-31"
     },
     {
       "title": "UP！小剧场6.0",
@@ -65,6 +58,13 @@
       "status": "已结束",
       "stime": "2026-07-10",
       "etime": "2026-09-30"
+    },
+    {
+      "title": "2026虚拟歌手创作赛",
+      "url": "https://www.bilibili.com/blackboard/era/2026VirtualSinger-pc.html",
+      "status": "已结束",
+      "stime": "2026-07-09",
+      "etime": "2026-10-31"
     }
   ]
 }
